@@ -1,0 +1,35 @@
+
+import matplotlib.pyplot as plt
+temperature = [22, 25, 28, 30, 32]
+humidity = [80, 75, 68, 60, 55]
+mean_temp = sum(temperature) / len(temperature)
+mean_humidity = sum(humidity) / len(humidity)
+temp_var_sum = 0
+humidity_var_sum = 0
+cov_sum = 0
+
+for i in range(len(temperature)):
+    temp_var_sum += (temperature[i] - mean_temp) ** 2
+    humidity_var_sum += (humidity[i] - mean_humidity) ** 2
+    cov_sum += (temperature[i] - mean_temp) * (humidity[i] - mean_humidity)
+
+n = len(temperature)
+temp_variance = temp_var_sum / (n - 1)
+humidity_variance = humidity_var_sum / (n - 1)
+covariance = cov_sum / (n - 1)
+
+covariance_matrix = [
+    [temp_variance, covariance],
+    [covariance, humidity_variance]
+]
+print("Covariance Matrix:")
+for row in covariance_matrix:
+    print(row)
+plt.scatter(temperature, humidity)
+
+plt.xlabel("Temperature (°C)")
+plt.ylabel("Humidity (%)")
+plt.title("Temperature vs Humidity")
+
+plt.grid(True)
+plt.show()
