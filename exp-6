@@ -1,0 +1,28 @@
+
+
+import matplotlib.pyplot as plt
+
+study_hours = [2, 4, 6, 8, 10]
+marks = [35, 45, 60, 75, 85]
+
+mean_hours = sum(study_hours) / len(study_hours)
+mean_marks = sum(marks) / len(marks)
+
+covariance_sum = 0
+
+for i in range(len(study_hours)):
+    covariance_sum += (study_hours[i] - mean_hours) * (marks[i] - mean_marks)
+
+covariance = covariance_sum / (len(study_hours) - 1)
+
+print("Mean Study Hours:", mean_hours)
+print("Mean Marks:", mean_marks)
+print("Sample Covariance:", covariance)
+plt.scatter(study_hours, marks)
+
+plt.xlabel("Study Hours")
+plt.ylabel("Examination Marks")
+plt.title("Study Hours vs Examination Marks")
+
+plt.grid(True)
+plt.show()
