@@ -1,0 +1,32 @@
+
+X = [
+    [30, 60],
+    [35, 70]
+]
+
+W = [
+    [0.2, 0.5],
+    [0.4, 0.3]
+]
+
+Y = [
+    [0, 0],
+    [0, 0]
+]
+
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            Y[i][j] += X[i][k] * W[k][j]
+
+print("Input Matrix X:")
+for row in X:
+    print(row)
+
+print("\nWeight Matrix W:")
+for row in W:
+    print(row)
+
+print("\nPredicted Output Matrix:")
+for row in Y:
+    print(row)
