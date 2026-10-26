@@ -1,0 +1,24 @@
+
+A = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+vector = []
+
+for row in A:
+    for pixel in row:
+        vector.append(pixel)
+
+total = sum(vector)
+
+print("Original Image Matrix:")
+for row in A:
+    print(row)
+
+print("\nFlattened Vector:")
+print(vector)
+
+print("\nTotal Pixel Intensity:")
+print(total)
