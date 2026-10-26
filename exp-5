@@ -1,0 +1,16 @@
+
+A = [2, 4, 6]
+B = [1, 3, 5]
+addition = []
+
+for i in range(len(A)):
+    addition.append(A[i] + B[i])
+dot_product = 0
+
+for i in range(len(A)):
+    dot_product += A[i] * B[i]
+
+print("Movie A Feature Vector:", A)
+print("Movie B Feature Vector:", B)
+print("Vector Addition:", addition)
+print("Dot Product:", dot_product)
