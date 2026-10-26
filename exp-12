@@ -1,0 +1,29 @@
+
+import math
+import matplotlib.pyplot as plt
+lam = 4
+k = 6
+probability = (math.exp(-lam) * lam**k) / math.factorial(k)
+print("Average customer arrivals =", lam)
+print("Number of customers =", k)
+print("Probability of exactly 6 customers =", round(probability, 4))
+print("Percentage =", round(probability * 100, 2), "%")
+x = list(range(13))
+pmf = []
+
+for n in x:
+    p = (math.exp(-lam) * lam**n) / math.factorial(n)
+    pmf.append(p)
+plt.bar(x, pmf, color="skyblue", edgecolor="black")
+
+plt.xlabel("Number of Customer Arrivals")
+plt.ylabel("Probability")
+plt.title("Poisson Distribution (Lambda = 4)")
+plt.xticks(x)
+plt.grid(axis="y", linestyle="--", alpha=0.5)
+
+plt.bar(k, pmf[k], color="orange", edgecolor="black",
+        label="Exactly 6 customers")
+plt.legend()
+
+plt.show()
