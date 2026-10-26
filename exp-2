@@ -1,0 +1,15 @@
+
+X = [4, 6, 8]
+W = [0.5, 0.3, 0.2]
+b = 2
+
+dot_product = 0
+
+for i in range(len(X)):
+    dot_product += X[i] * W[i]
+predicted_output = dot_product + b
+print("Input Vector:", X)
+print("Weight Vector:", W)
+print("Dot Product:", dot_product)
+print("Bias:", b)
+print("Predicted Output:", predicted_output)
