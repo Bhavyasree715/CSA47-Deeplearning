@@ -1,0 +1,14 @@
+
+W = [0.7, 0.5, 0.9]
+G = [0.2, 0.1, 0.3]
+learning_rate = 0.1
+updated_W = []
+
+for i in range(len(W)):
+    new_weight = W[i] - learning_rate * G[i]
+    updated_W.append(new_weight)
+
+print("Original Weight Vector:", W)
+print("Gradient Vector:", G)
+print("Learning Rate:", learning_rate)
+print("Updated Weight Vector:", updated_W)
